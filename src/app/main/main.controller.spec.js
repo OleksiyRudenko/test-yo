@@ -23,7 +23,7 @@
 
       vm = _$controller_('MainController', {
         $mdSidenav  : $mdSidenav,
-        $log        : $log,
+        $log        : $log
       });
       // $timeout = _$timeout_;
       // toastr = _toastr_;

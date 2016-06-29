@@ -6,13 +6,14 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($mdSidenav) { // $timeout, webDevTec, toastr) {
+  function MainController($mdSidenav, $log) { // $timeout, webDevTec, toastr) {
     var vm = this;
 
     vm.toggleLeftMenu = toggleLeftMenu;
 
     function toggleLeftMenu() {
       $mdSidenav("leftMenu").toggle();
+      $log.info();
     }
 
     /*
