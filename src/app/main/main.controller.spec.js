@@ -6,10 +6,15 @@
     // var $timeout;
     // var toastr;
     var $mdSidenav;
+    var $log;
 
     $mdSidenav = jasmine.createSpy().and.returnValue({
       toggle  : jasmine.createSpy()
     });
+
+    $log = {
+      info : jasmine.createSpy()
+    };
 
     beforeEach(module('testYo'));
     beforeEach(inject(function(_$controller_) { //_$timeout_, _webDevTec_, _toastr_) {
@@ -17,7 +22,8 @@
       // spyOn(_toastr_, 'info').and.callThrough();
 
       vm = _$controller_('MainController', {
-        $mdSidenav : $mdSidenav
+        $mdSidenav  : $mdSidenav,
+        $log        : $log,
       });
       // $timeout = _$timeout_;
       // toastr = _toastr_;
@@ -27,6 +33,11 @@
       vm.toggleLeftMenu();
       expect($mdSidenav).toHaveBeenCalledWith('leftMenu');
       // expect(vm.creationDate).toEqual(jasmine.any(Number));
+    });
+
+    it('should log toggle left menu', function() {
+      vm.toggleLeftMenu();
+      expect($log).toHaveBeenCalled();
     });
 
     /* it('should have a timestamp creation date', function() {
