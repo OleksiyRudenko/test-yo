@@ -6,9 +6,16 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($mdSidenav) { // $timeout, webDevTec, toastr) {
     var vm = this;
 
+    vm.toggleLeftMenu = toggleLeftMenu;
+
+    function toggleLeftMenu() {
+      $mdSidenav("leftMenu").toggle();
+    }
+
+    /*
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1467187114721;
@@ -34,6 +41,6 @@
       angular.forEach(vm.awesomeThings, function(awesomeThing) {
         awesomeThing.rank = Math.random();
       });
-    }
+    } */
   }
 })();
