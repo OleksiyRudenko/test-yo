@@ -11,6 +11,9 @@
 
     vm.toggleLeftMenu = toggleLeftMenu;
 
+
+    // private methods
+
     function toggleLeftMenu() {
       $mdSidenav("leftMenu").toggle();
       $log.info();
