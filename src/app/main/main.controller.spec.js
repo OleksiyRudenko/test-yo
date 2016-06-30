@@ -37,7 +37,7 @@
 
     it('should log toggle left menu', function() {
       vm.toggleLeftMenu();
-      expect($log).toHaveBeenCalled();
+      expect($log.info).toHaveBeenCalled();
     });
 
     /* it('should have a timestamp creation date', function() {
